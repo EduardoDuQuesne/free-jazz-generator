@@ -161,10 +161,8 @@ Tone.Transport.scheduleRepeat(function (time) {
     if (number < 0.3) {
         arrayNum = randomMinMax(0, 2);
         drumSequencer.matrix.set.all(drumArray[arrayNum]);
-        saxSequencer.matrix.set.all(sMatrix.sax1);
     }
     if (number > 0.3) {
-        saxSequencer.matrix.set.all(randomSaxMatrix());
         drumSequencer.matrix.set.all(createRandomDrumMatrix());
     }
     if (number > 0.5) {
@@ -173,7 +171,7 @@ Tone.Transport.scheduleRepeat(function (time) {
         Tone.Transport.bpm.rampTo(tempo, rampLength);
         tempoKnob.value = tempo;
     }
-}, "2m");
+}, "1m");
 
 Tone.Transport.scheduleRepeat(function (time) {
     let number = randomNumber();
@@ -181,6 +179,15 @@ Tone.Transport.scheduleRepeat(function (time) {
         applause.start();
     }
 }, "1n");
+
+Tone.Transport.scheduleRepeat(function (time) {
+    let number = randomNumber();
+    if (number > 0.05) {
+        saxSequencer.matrix.set.all(randomSaxMatrix());
+    } else {
+        saxSequencer.matrix.set.all(sMatrix.sax1);
+    }
+}, "2m");
 
 
 
