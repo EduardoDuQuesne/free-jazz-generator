@@ -220,3 +220,4 @@ Tone.Transport.scheduleRepeat(function (time) {
 let triggerApplause = () => {
     applause.start();
 };
+
